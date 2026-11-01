@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Table</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <header style="text-align:center; padding:20px;">
+        <h1>Soil Moisture &amp; Irrigation</h1>
+        <p><i>AI-based irrigation recommendations for farm plots</i></p>
+    </header>
+
+    <table class="irrigation-table">
+        <caption>Farm Irrigation Recommendations</caption>
+        <thead>
+            <tr>
+                <th>Plot ID</th>
+                <th>Farmer Name</th>
+                <th>Soil Moisture (%)</th>
+                <th>Weather</th>
+                <th>Irrigation Recommendation</th>
+                <th>Water Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A101</td>
+                <td>Rajesh Patil</td>
+                <td><b>32%</b></td>
+                <td>☀ Sunny</td>
+                <td><b>45 Minutes</b></td>
+                <td>500 Litres</td>
+            </tr>
+            <tr>
+                <td>A102</td>
+                <td>Suresh More</td>
+                <td><b>48%</b></td>
+                <td>☁ Cloudy</td>
+                <td><b>30 Minutes</b></td>
+                <td>350 Litres</td>
+            </tr>
+            <tr>
+                <td rowspan="2">A103</td>
+                <td>Priya Shah</td>
+                <td>25%</td>
+                <td>☀ Sunny</td>
+                <td><b>60 Minutes</b></td>
+                <td>700 Litres</td>
+            </tr>
+            <tr>
+                <td>Priya Shah</td>
+                <td>28%</td>
+                <td>☀ Sunny</td>
+                <td><b>50 Minutes</b></td>
+                <td>600 Litres</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="text-align:right;"><b>Total Water Requirement</b></td>
+                <td><b>2150 Litres</b></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <footer>Efficient Water Use = Sustainable Agriculture</footer>
+</body>
+</html>

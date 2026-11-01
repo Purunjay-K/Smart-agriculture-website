@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Plot Navigation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+    <header style="text-align:center; padding:20px; background:#e0f2f1;">
+        <h1>Farm Plot Navigation</h1>
+        <p><i>Click on different areas of the farm to view plot details</i></p>
+    </header>
+
+    <main class="page-content" style="width:min(1000px,94%); margin:25px auto; text-align:center;">
+        <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aerial_View_Farm.JPG"
+             alt="Aerial View of Farm" title="Farm Plot Map"
+             width="800" height="500" usemap="#farmmap">
+
+        <map name="farmmap">
+            <area shape="rect" coords="50,50,300,220" href="plot-a.html" alt="Plot A" title="Plot A">
+            <area shape="rect" coords="300,50,550,220" href="plot-b.html" alt="Plot B" title="Plot B">
+            <area shape="rect" coords="550,220,780,450" href="plot-c.html" alt="Plot C" title="Plot C">
+        </map>
+
+        <div class="info-card"><h3>Plot A</h3><p>Healthy Crop</p></div>
+        <div class="info-card"><h3>Plot B</h3><p>Moderate Moisture</p></div>
+        <div class="info-card"><h3>Plot C</h3><p>Needs Irrigation</p></div>
+    </main>
+
+    <footer>Smart Irrigation • Better Farming • Water Conservation</footer>
+</body>
+</html>

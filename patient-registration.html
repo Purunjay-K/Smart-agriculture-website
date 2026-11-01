@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Patient Registration Portal</title>
+
+    <!-- Bootstrap CSS retained from Experiment 2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+
+    <style>
+        .task-card {
+            border-left: 5px solid #198754;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        .output-box {
+            background: #f0fff4;
+            border: 1px solid #b7e4c7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            white-space: pre-line;
+        }
+        .error-message {
+            display: none;
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+        .invalid-field {
+            border: 2px solid #dc3545 !important;
+        }
+        .valid-field {
+            border: 2px solid #198754 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-success text-white text-center p-4">
+        <h1>Healthcare Patient Registration Portal</h1>
+        <p class="mb-0"><i>JavaScript Programming and Form Validation</i></p>
+    </header>
+
+    <main class="container my-4">
+
+        <!-- TASK 1 -->
+        <section class="task-card p-4 mb-4">
+            <h2 class="text-success">Task 1: Patient Information and Registration Fee Calculation</h2>
+            <p>Enter patient and fee details to calculate the total registration amount.</p>
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label" for="feePatientName">Patient Name</label>
+                    <input class="form-control" id="feePatientName" type="text" value="Rahul Sharma">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label" for="feePatientId">Patient ID</label>
+                    <input class="form-control" id="feePatientId" type="text" value="PAT-1001">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="feePatientAge">Patient Age</label>
+                    <input class="form-control" id="feePatientAge" type="number" value="62" min="0">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="consultationFee">Consultation Fee (₹)</label>
+                    <input class="form-control" id="consultationFee" type="number" value="500" min="0">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label" for="registrationFee">Registration Fee (₹)</label>
+                    <input class="form-control" id="registrationFee" type="number" value="100" min="0">
+                </div>
+            </div>
+
+            <button class="btn btn-success mt-3" type="button" onclick="calculateRegistrationFee()">Calculate Amount</button>
+            <button class="btn btn-outline-success mt-3" type="button" onclick="showTask1UsingDocumentWrite()">Show Using document.write()</button>
+            <div id="feeOutput" class="output-box" style="display:none;"></div>
+        </section>
+
+        <!-- TASK 2 -->
+        <section class="task-card p-4 mb-4">
+            <h2 class="text-success">Task 2: Patient Appointment and Priority Decision</h2>
+            <p>Priority is decided using age, temperature, severity and emergency status.</p>
+
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label" for="priorityAge">Patient Age</label>
+                    <input class="form-control" id="priorityAge" type="number" value="65" min="0">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="temperature">Temperature (°C)</label>
+                    <input class="form-control" id="temperature" type="number" value="37.2" step="0.1">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="severity">Severity Level</label>
+                    <select class="form-select" id="severity">
+                        <option value="Mild">Mild</option>
+                        <option value="Moderate" selected>Moderate</option>
+                        <option value="Severe">Severe</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label" for="emergency">Emergency Status</label>
+                    <select class="form-select" id="emergency">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn btn-success mt-3" type="button" onclick="determinePriority()">Determine Priority</button>
+            <div id="priorityOutput" class="output-box" style="display:none;"></div>
+        </section>
+
+        <!-- TASK 3 -->
+        <section class="task-card p-4 mb-4">
+            <h2 class="text-success">Task 3: JavaScript Object for Patient Registration</h2>
+            <p>The patient object contains properties and methods using the <code>this</code> keyword.</p>
+            <button class="btn btn-success" type="button" onclick="displayPatientObject()">Display Patient Object</button>
+            <div id="objectOutput" class="output-box" style="display:none;"></div>
+        </section>
+
+        <!-- TASK 4 -->
+        <section class="task-card p-4 mb-4">
+            <h2 class="text-success">Task 4: Patient Age and Appointment Data Using Arrays</h2>
+            <p>Patient ages: <code>[22, 35, 67, 45, 29, 72, 56, 18, 64, 40]</code></p>
+            <button class="btn btn-success" type="button" onclick="analyzePatientAges()">Analyze Patient Ages</button>
+            <div id="arrayOutput" class="output-box" style="display:none;"></div>
+        </section>
+
+        <!-- TASK 5 -->
+        <section class="task-card p-4 mb-4">
+            <h2 class="text-success">Task 5: Validate Patient Registration Details Using Regular Expressions</h2>
+            <p>All fields are validated using JavaScript, functions, conditions, DOM access and regular expressions.</p>
+
+            <form id="patientForm" novalidate>
+                <fieldset class="border rounded p-3">
+                    <legend class="float-none w-auto px-2">Patient Registration</legend>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="patientName">Patient Name</label>
+                            <input class="form-control" id="patientName" name="patientName" type="text" placeholder="Rahul Sharma">
+                            <div id="patientNameError" class="error-message"></div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="patientMobile">Mobile Number</label>
+                            <input class="form-control" id="patientMobile" name="patientMobile" type="tel" placeholder="9876543210">
+                            <div id="patientMobileError" class="error-message"></div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="patientId">Patient ID</label>
+                            <input class="form-control" id="patientId" name="patientId" type="text" placeholder="PAT-1234">
+                            <div id="patientIdError" class="error-message"></div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="patientEmail">Email Address</label>
+                            <input class="form-control" id="patientEmail" name="patientEmail" type="email" placeholder="rahul@gmail.com">
+                            <div id="patientEmailError" class="error-message"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <button class="btn btn-success me-2" type="submit">Register Patient</button>
+                        <button class="btn btn-secondary" type="reset">Reset</button>
+                    </div>
+                    <div id="registrationSuccess" class="alert alert-success mt-3" style="display:none;"></div>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-success text-white text-center p-3 mt-4">
+        <p class="mb-0">Healthcare Patient Registration Portal - JavaScript Experiment</p>
+    </footer>
+
+    <script src="patient.js"></script>
+</body>
+</html>

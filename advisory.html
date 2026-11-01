@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Advisory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+</head>
+<body>
+    <main class="page-content" style="width:min(900px,92%); margin:40px auto;">
+        <h1>Today's Irrigation Advisory</h1>
+        <hr>
+
+        <div class="offer-box">
+            💧 Recommended Irrigation: 45 Minutes
+        </div>
+
+        <h2><mark>Sugarcane Field Recommendation</mark></h2>
+        <p>
+            <strong>Plot ID:</strong> A101<br>
+            <strong>Farmer Name:</strong> Rajesh Patil<br>
+            <strong>Soil Moisture:</strong> <em>32%</em><br>
+            <strong>Recommended Irrigation Duration:</strong>
+            <mark>45 Minutes</mark><br>
+            <strong>Water Stress Level:</strong> <em>Moderate</em>
+        </p>
+        <hr>
+        <small>Recommendation generated using soil moisture and weather data.</small>
+                <!-- Experiment 7: React field advisory component -->
+        <hr>
+        <h2><mark>Live Field Advisory</mark></h2>
+        <p>
+            Interactive soil moisture cards: use the buttons to simulate
+            irrigation or a dry day and watch the advisory update.
+        </p>
+        <iframe
+            src="exp7/index.html"
+            title="Field Advisory (React)"
+            style="width:100%; height:950px; border:0; border-radius:8px;">
+        </iframe>
+        <p><small><a href="exp7/index.html" target="_blank">Open the field advisory in a full page</a></small></p>
+                <hr>
+        <h2><mark>Field Monitoring Portal</mark></h2>
+        <p>
+            Explore all fields in a full single-page application with
+            Home, Fields and About views.
+        </p>
+        <p>
+            <a href="exp8/index.html" style="display:inline-block; padding:12px 22px;
+               background:#2e7d32; color:#fff; text-decoration:none; border-radius:6px;">
+                Open Field Monitoring Portal →
+            </a>
+        </p>
+    </main>
+    <footer>AI-Based Smart Irrigation Advisory System</footer>
+</body>
+</html>
